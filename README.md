@@ -1,4 +1,5 @@
 # Auto-SideScanCert-Lines
+2024-08-25
 # My first project - primarily for the purpose of learning python - that automates Side Scan Certification lines for any number of given potential targets. 
 # Developed for use aboard the NOAA ship Thomas Jefferson in aid of hydrographic surveying 
 
