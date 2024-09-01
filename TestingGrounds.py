@@ -25,6 +25,8 @@ for folder in root.Document.Folder:
                 #compile coordinates into list as function iterates through all 
                 all_coordinates.append(coordinates)
                 
+
+
     
 
 #bring in geopy and maths to do math of lat and long to linear distance
@@ -34,17 +36,25 @@ import math
 from math import sqrt
 import utm
 
-#set length and height
-length = 12.5
-
 
 def spacing(number):
+    
+    #set length and height
+    length = 12.5
+    
+    #determine number of lines being written to use in creating .txt file
+    endlength = len(all_coordinates)*12
+    print(endlength)
+
+    #Create list variable to loop through in order to name lines in output file
+    listlength = 0
     
     for x in all_coordinates:
         long = x[0]
         lat = x[1]
     
         start_point = geopy.Point(lat,long)
+
 
     
     #-----------------------------------------------------------------------------------------------------------
@@ -174,7 +184,9 @@ def spacing(number):
             
             #make list of points to loop through for eastings and northings
             ToUTMList = [WNpoint75, ENpoint75, WSpoint75, ESpoint75, NWpoint75, SWpoint75, NEpoint75, SEpoint75, WNpoint25, ENpoint25, WSpoint25, ESpoint25, NWpoint25, SWpoint25, NEpoint25, SEpoint25, WNpoint425, ENpoint425, WSpoint425, ESpoint425, NWpoint425, SWpoint425, NEpoint425, SEpoint425]
-            
+
+
+    
             #Loop through created line-points and store as UTM list
             for x in ToUTMList:
                 LatTest = utm.from_latlon(x.latitude,x.longitude)
@@ -184,14 +196,35 @@ def spacing(number):
                 easting_str = f"{LatTest[0]:.2f}"
                 northing_str = f"{LatTest[1]:.2f}"
                 
-                #print(easting_str,northing_str)
+                print(easting_str,northing_str)
+                
         
-    listlength = 0
-    print(len(all_coordinates))
+                listlength = listlength + 1
+                print(listlength)
+                
+            print("break here")
+            
+        #testing from here on on how to create line file
+        
+        lines = []
+            
+            
+        print(lines)
+            
+            appendinglines = ["LIN 2\n", ]
+            #Compile Test variables in txt file format that Hypack could read once converted to .lnw
+            #lines = ["LNS 1\n", "LIN 2\n", f"PTS {easting_str} {northing_str}\n", f"PTS {easting2_str} {northing2_str}\n", "LNN 1\n", "EOL"]
+    
+
+
+
+            
+    
+
 
     
     #Compile Test variables in txt file format that Hypack could read once converted to .lnw
-    lines = ["LNS 1\n", "LIN 2\n", f"PTS {easting_str} {northing_str}\n", f"PTS {easting2_str} {northing2_str}\n", "LNN 1\n", "EOL"]
+    #lines = ["LNS 1\n", "LIN 2\n", f"PTS {easting_str} {northing_str}\n", f"PTS {easting2_str} {northing2_str}\n", "LNN 1\n", "EOL"]
         
         #Write file
         #with open("lineplanpractice", "w") as file:
