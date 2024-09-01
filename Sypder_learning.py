@@ -54,11 +54,18 @@ import math
 from math import sqrt
 import utm
 
-#set length and height
-length = 12.5
-
 
 def spacing(number):
+    
+    #set length and height
+    length = 12.5
+    
+    #determine number of lines being written to use in creating .txt file -- Might need to go after append coordinates in order to convert number to string for writing output
+    endlength= len(all_coordinates)*12
+    #turn that number into string for writing to file
+    endlength_str = f"{endlength}"
+    #print(endlength)
+
     
     for x in all_coordinates:
         long = x[0]
@@ -84,10 +91,10 @@ def spacing(number):
             WSpoint15 = geopy.distance.geodesic(meters=distance_m15).destination(start_point, bearing1S15)
             ESpoint15 = geopy.distance.geodesic(meters=distance_m15).destination(start_point, bearing2S15)
             
-            print(WNpoint15.latitude, WNpoint15.longitude)
-            print(ENpoint15.latitude, ENpoint15.longitude)
-            print(WSpoint15.latitude, WSpoint15.longitude)
-            print(ESpoint15.latitude, ESpoint15.longitude)
+            #print(WNpoint15.latitude, WNpoint15.longitude)
+            #print(ENpoint15.latitude, ENpoint15.longitude)
+            #print(WSpoint15.latitude, WSpoint15.longitude)
+            #print(ESpoint15.latitude, ESpoint15.longitude)
     
             #Create Western North and South points for 15m line
             bearing1W15 = 270 + (math.degrees(math.atan(length/15)))
@@ -103,10 +110,10 @@ def spacing(number):
             NEpoint15 = geopy.distance.geodesic(meters=distance_m15).destination(start_point, bearing1E15)
             SEpoint15 = geopy.distance.geodesic(meters=distance_m15).destination(start_point, bearing2E15)
             
-            print(NWpoint15.latitude, NWpoint15.longitude)
-            print(SWpoint15.latitude, SWpoint15.longitude)
-            print(NEpoint15.latitude, NEpoint15.longitude)
-            print(SEpoint15.latitude, SEpoint15.longitude)
+            #print(NWpoint15.latitude, NWpoint15.longitude)
+            #print(SWpoint15.latitude, SWpoint15.longitude)
+            #print(NEpoint15.latitude, NEpoint15.longitude)
+            #print(SEpoint15.latitude, SEpoint15.longitude)
             
         #Calc for points 50m North
             distance_m50 = sqrt(length**2 + 50**2)
@@ -124,10 +131,10 @@ def spacing(number):
             WSpoint50 = geopy.distance.geodesic(meters=distance_m50).destination(start_point, bearing1S50)
             ESpoint50 = geopy.distance.geodesic(meters=distance_m50).destination(start_point, bearing2S50)
             
-            print(WNpoint50.latitude, WNpoint50.longitude)
-            print(ENpoint50.latitude, ENpoint50.longitude)
-            print(WSpoint50.latitude, WSpoint50.longitude)
-            print(ESpoint50.latitude, ESpoint50.longitude)
+            #print(WNpoint50.latitude, WNpoint50.longitude)
+            #print(ENpoint50.latitude, ENpoint50.longitude)
+            #print(WSpoint50.latitude, WSpoint50.longitude)
+            #print(ESpoint50.latitude, ESpoint50.longitude)
             
             #Create Western North and South points for 50m line
             bearing1W50 = 270 + (math.degrees(math.atan(length/50)))
@@ -143,10 +150,10 @@ def spacing(number):
             NEpoint50 = geopy.distance.geodesic(meters=distance_m50).destination(start_point, bearing1E50)
             SEpoint50 = geopy.distance.geodesic(meters=distance_m50).destination(start_point, bearing2E50)
             
-            print(NWpoint50.latitude, NWpoint50.longitude)
-            print(SWpoint50.latitude, SWpoint50.longitude)
-            print(NEpoint50.latitude, NEpoint50.longitude)
-            print(SEpoint50.latitude, SEpoint50.longitude)
+            #print(NWpoint50.latitude, NWpoint50.longitude)
+            #print(SWpoint50.latitude, SWpoint50.longitude)
+            #print(NEpoint50.latitude, NEpoint50.longitude)
+            #print(SEpoint50.latitude, SEpoint50.longitude)
     
     
         #Calc for points 85m North
@@ -165,10 +172,10 @@ def spacing(number):
             WSpoint85 = geopy.distance.geodesic(meters=distance_m85).destination(start_point, bearing1S85)
             ESpoint85 = geopy.distance.geodesic(meters=distance_m85).destination(start_point, bearing2S85)
     
-            print(WNpoint85.latitude, WNpoint85.longitude)
-            print(ENpoint85.latitude, ENpoint85.longitude)
-            print(WSpoint85.latitude, WSpoint85.longitude)
-            print(ESpoint85.latitude, ESpoint85.longitude)
+            #print(WNpoint85.latitude, WNpoint85.longitude)
+            #print(ENpoint85.latitude, ENpoint85.longitude)
+            #print(WSpoint85.latitude, WSpoint85.longitude)
+            #print(ESpoint85.latitude, ESpoint85.longitude)
             
             #Create Western North and South points for 85m line
             bearing1W85 = 270 + (math.degrees(math.atan(length/85)))
@@ -184,10 +191,10 @@ def spacing(number):
             NEpoint85 = geopy.distance.geodesic(meters=distance_m85).destination(start_point, bearing1E85)
             SEpoint85 = geopy.distance.geodesic(meters=distance_m85).destination(start_point, bearing2E85)
             
-            print(NWpoint85.latitude, NWpoint85.longitude)
-            print(SWpoint85.latitude, SWpoint85.longitude)
-            print(NEpoint85.latitude, NEpoint85.longitude)
-            print(SEpoint85.latitude, SEpoint85.longitude)
+            #print(NWpoint85.latitude, NWpoint85.longitude)
+            #print(SWpoint85.latitude, SWpoint85.longitude)
+            #print(NEpoint85.latitude, NEpoint85.longitude)
+            #print(SEpoint85.latitude, SEpoint85.longitude)
     
     
     #-----------------------------------------------------------------------------------------------------------
@@ -210,10 +217,10 @@ def spacing(number):
             WSpoint1125 = geopy.distance.geodesic(meters=distance_m1125).destination(start_point, bearing1S1125)
             ESpoint1125 = geopy.distance.geodesic(meters=distance_m1125).destination(start_point, bearing2S1125)
             
-            print(WNpoint1125.latitude, WNpoint1125.longitude)
-            print(ENpoint1125.latitude, ENpoint1125.longitude)
-            print(WSpoint1125.latitude, WSpoint1125.longitude)
-            print(ESpoint1125.latitude, ESpoint1125.longitude)
+            #print(WNpoint1125.latitude, WNpoint1125.longitude)
+            #print(ENpoint1125.latitude, ENpoint1125.longitude)
+            #print(WSpoint1125.latitude, WSpoint1125.longitude)
+            #print(ESpoint1125.latitude, ESpoint1125.longitude)
               
             #Create Western North and South points for 11.25 line
             bearing1W1125 = 270 + (math.degrees(math.atan(length/11.25)))
@@ -229,10 +236,10 @@ def spacing(number):
             NEpoint1125 = geopy.distance.geodesic(meters=distance_m1125).destination(start_point, bearing1E1125)
             SEpoint1125 = geopy.distance.geodesic(meters=distance_m1125).destination(start_point, bearing2E1125)
             
-            print(NWpoint1125.latitude, NWpoint1125.longitude)
-            print(SWpoint1125.latitude, SWpoint1125.longitude)
-            print(NEpoint1125.latitude, NEpoint1125.longitude)
-            print(SEpoint1125.latitude, SEpoint1125.longitude)
+            #print(NWpoint1125.latitude, NWpoint1125.longitude)
+            #print(SWpoint1125.latitude, SWpoint1125.longitude)
+            #print(NEpoint1125.latitude, NEpoint1125.longitude)
+            #print(SEpoint1125.latitude, SEpoint1125.longitude)
             
         #Calculate positions for 37.5m line North 
             distance_m375 = sqrt(length**2 + 37.5**2)
@@ -250,10 +257,10 @@ def spacing(number):
             WSpoint375 = geopy.distance.geodesic(meters=distance_m375).destination(start_point, bearing1S375)
             ESpoint375 = geopy.distance.geodesic(meters=distance_m375).destination(start_point, bearing2S375)
             
-            print(WNpoint375.latitude, WNpoint375.longitude)
-            print(ENpoint375.latitude, ENpoint375.longitude)
-            print(WSpoint375.latitude, WSpoint375.longitude)
-            print(ESpoint375.latitude, ESpoint375.longitude)
+            #print(WNpoint375.latitude, WNpoint375.longitude)
+            #print(ENpoint375.latitude, ENpoint375.longitude)
+            #print(WSpoint375.latitude, WSpoint375.longitude)
+            #print(ESpoint375.latitude, ESpoint375.longitude)
             
             #Create Western North and South points for 37.5m line
             bearing1W375 = 270 + (math.degrees(math.atan(length/37.5)))
@@ -269,10 +276,10 @@ def spacing(number):
             NEpoint375 = geopy.distance.geodesic(meters=distance_m375).destination(start_point, bearing1E375)
             SEpoint375 = geopy.distance.geodesic(meters=distance_m375).destination(start_point, bearing2E375)
             
-            print(NWpoint375.latitude, NWpoint375.longitude)
-            print(SWpoint375.latitude, SWpoint375.longitude)
-            print(NEpoint375.latitude, NEpoint375.longitude)
-            print(SEpoint375.latitude, SEpoint375.longitude)
+            #print(NWpoint375.latitude, NWpoint375.longitude)
+            #print(SWpoint375.latitude, SWpoint375.longitude)
+            #print(NEpoint375.latitude, NEpoint375.longitude)
+            #print(SEpoint375.latitude, SEpoint375.longitude)
             
         #Calculate positions for 63.75m line North 
             distance_m6375 = sqrt(length**2 + 63.75**2)
@@ -290,10 +297,10 @@ def spacing(number):
             WSpoint6375 = geopy.distance.geodesic(meters=distance_m6375).destination(start_point, bearing1S6375)
             ESpoint6375 = geopy.distance.geodesic(meters=distance_m6375).destination(start_point, bearing2S6375)
             
-            print(WNpoint6375.latitude, WNpoint6375.longitude)
-            print(ENpoint6375.latitude, ENpoint6375.longitude)
-            print(WSpoint6375.latitude, WSpoint6375.longitude)
-            print(ESpoint6375.latitude, ESpoint6375.longitude)    
+            #print(WNpoint6375.latitude, WNpoint6375.longitude)
+            #print(ENpoint6375.latitude, ENpoint6375.longitude)
+            #print(WSpoint6375.latitude, WSpoint6375.longitude)
+            #print(ESpoint6375.latitude, ESpoint6375.longitude)    
             
             #Create Western North and South points for 63.75m line
             bearing1W6375 = 270 + (math.degrees(math.atan(length/63.75)))
@@ -309,10 +316,10 @@ def spacing(number):
             NEpoint6375 = geopy.distance.geodesic(meters=distance_m6375).destination(start_point, bearing1E6375)
             SEpoint6375 = geopy.distance.geodesic(meters=distance_m6375).destination(start_point, bearing2E6375)
             
-            print(NWpoint6375.latitude, NWpoint6375.longitude)
-            print(SWpoint6375.latitude, SWpoint6375.longitude)
-            print(NEpoint6375.latitude, NEpoint6375.longitude)
-            print(SEpoint6375.latitude, SEpoint6375.longitude)
+            #print(NWpoint6375.latitude, NWpoint6375.longitude)
+            #print(SWpoint6375.latitude, SWpoint6375.longitude)
+            #print(NEpoint6375.latitude, NEpoint6375.longitude)
+            #print(SEpoint6375.latitude, SEpoint6375.longitude)
     
     #-----------------------------------------------------------------------------------------------------------
     
@@ -334,10 +341,10 @@ def spacing(number):
             WSpoint75 = geopy.distance.geodesic(meters=distance_m75).destination(start_point, bearing1S75)
             ESpoint75 = geopy.distance.geodesic(meters=distance_m75).destination(start_point, bearing2S75)
             
-            print(WNpoint75.latitude, WNpoint75.longitude)
-            print(ENpoint75.latitude, ENpoint75.longitude)
-            print(WSpoint75.latitude, WSpoint75.longitude)
-            print(ESpoint75.latitude, ESpoint75.longitude)
+            #print(WNpoint75.latitude, WNpoint75.longitude)
+            #print(ENpoint75.latitude, ENpoint75.longitude)
+            #print(WSpoint75.latitude, WSpoint75.longitude)
+            #print(ESpoint75.latitude, ESpoint75.longitude)
             
             #Create Western North and South points for 7.5m line
             bearing1W75 = 270 + (math.degrees(math.atan(length/7.5)))
@@ -353,10 +360,10 @@ def spacing(number):
             NEpoint75 = geopy.distance.geodesic(meters=distance_m75).destination(start_point, bearing1E75)
             SEpoint75 = geopy.distance.geodesic(meters=distance_m75).destination(start_point, bearing2E75)
             
-            print(NWpoint75.latitude, NWpoint75.longitude)
-            print(SWpoint75.latitude, SWpoint75.longitude)
-            print(NEpoint75.latitude, NEpoint75.longitude)
-            print(SEpoint75.latitude, SEpoint75.longitude)
+            #print(NWpoint75.latitude, NWpoint75.longitude)
+            #print(SWpoint75.latitude, SWpoint75.longitude)
+            #print(NEpoint75.latitude, NEpoint75.longitude)
+            #print(SEpoint75.latitude, SEpoint75.longitude)
     
         #Calc for points 25m North
             distance_m25 = sqrt(length**2 + 25**2)
@@ -374,10 +381,10 @@ def spacing(number):
             WSpoint25 = geopy.distance.geodesic(meters=distance_m25).destination(start_point, bearing1S25)
             ESpoint25 = geopy.distance.geodesic(meters=distance_m25).destination(start_point, bearing2S25)
             
-            print(WNpoint25.latitude, WNpoint25.longitude)
-            print(ENpoint25.latitude, ENpoint25.longitude)
-            print(WSpoint25.latitude, WSpoint25.longitude)
-            print(ESpoint25.latitude, ESpoint25.longitude)
+            #print(WNpoint25.latitude, WNpoint25.longitude)
+            #print(ENpoint25.latitude, ENpoint25.longitude)
+            #print(WSpoint25.latitude, WSpoint25.longitude)
+            #print(ESpoint25.latitude, ESpoint25.longitude)
     
             #Create Western North and South points for 25m line
             bearing1W25 = 270 + (math.degrees(math.atan(length/25)))
@@ -393,10 +400,10 @@ def spacing(number):
             NEpoint25 = geopy.distance.geodesic(meters=distance_m25).destination(start_point, bearing1E25)
             SEpoint25 = geopy.distance.geodesic(meters=distance_m25).destination(start_point, bearing2E25)
             
-            print(NWpoint25.latitude, NWpoint25.longitude)
-            print(SWpoint25.latitude, SWpoint25.longitude)
-            print(NEpoint25.latitude, NEpoint25.longitude)
-            print(SEpoint25.latitude, SEpoint25.longitude)
+            #print(NWpoint25.latitude, NWpoint25.longitude)
+            #print(SWpoint25.latitude, SWpoint25.longitude)
+            #print(NEpoint25.latitude, NEpoint25.longitude)
+            #print(SEpoint25.latitude, SEpoint25.longitude)
     
         #Calc for points 42.5m North
             distance_m425 = sqrt(length**2 + 42.5**2)
@@ -414,10 +421,10 @@ def spacing(number):
             WSpoint425 = geopy.distance.geodesic(meters=distance_m425).destination(start_point, bearing1S425)
             ESpoint425 = geopy.distance.geodesic(meters=distance_m425).destination(start_point, bearing2S425)
     
-            print(WNpoint425.latitude, WNpoint425.longitude)
-            print(ENpoint425.latitude, ENpoint425.longitude)
-            print(WSpoint425.latitude, WSpoint425.longitude)
-            print(ESpoint425.latitude, ESpoint425.longitude)
+            #print(WNpoint425.latitude, WNpoint425.longitude)
+            #print(ENpoint425.latitude, ENpoint425.longitude)
+            #print(WSpoint425.latitude, WSpoint425.longitude)
+            #print(ESpoint425.latitude, ESpoint425.longitude)
             
             #Create Western North and South points for 42.5m line
             bearing1W425 = 270 + (math.degrees(math.atan(length/42.5)))
@@ -433,43 +440,82 @@ def spacing(number):
             NEpoint425 = geopy.distance.geodesic(meters=distance_m425).destination(start_point, bearing1E425)
             SEpoint425 = geopy.distance.geodesic(meters=distance_m425).destination(start_point, bearing2E425)
             
-            print(NWpoint425.latitude, NWpoint425.longitude)
-            print(SWpoint425.latitude, SWpoint425.longitude)
-            print(NEpoint425.latitude, NEpoint425.longitude)
-            print(SEpoint425.latitude, SEpoint425.longitude)
+            #print(NWpoint425.latitude, NWpoint425.longitude)
+            #print(SWpoint425.latitude, SWpoint425.longitude)
+            #print(NEpoint425.latitude, NEpoint425.longitude)
+            #print(SEpoint425.latitude, SEpoint425.longitude)
 
-        else:
-            print("wa wa wa")
+
         
-        #convert lat and long into UTM for use in Hypack
-        LatTest1 = utm.from_latlon(NEpoint425.latitude, NEpoint425.longitude)
-        
-        #Grab just the easting/northing from the UTM -- can likely be vectorized with line below
-            #Note - current output for LatTest1 gives UTM zone 17S... I am currently ignoring the "S" as it seems to work
-        easting = LatTest1[0]
-        easting_str = f"{easting:.2f}"
-        northing = LatTest1[1]
-        northing_str = f"{northing:.2f}"
-        
-        LatTest2 = utm.from_latlon(SEpoint425.latitude, SEpoint425.longitude)
-        easting2 = LatTest2[0]
-        easting2_str = f"{easting2:.2f}"
-        northing2 = LatTest2[1]
-        northing2_str = f"{northing2:.2f}"
+            #make list of points to loop through for eastings and northings
+            ToUTMList = [WNpoint75, ENpoint75, WSpoint75, ESpoint75, NWpoint75, SWpoint75, NEpoint75, SEpoint75, WNpoint25, ENpoint25, WSpoint25, ESpoint25, NWpoint25, SWpoint25, NEpoint25, SEpoint25, WNpoint425, ENpoint425, WSpoint425, ESpoint425, NWpoint425, SWpoint425, NEpoint425, SEpoint425]
+            
+            #create empty variable to append UTM coords to in order to create list outside of each if statement loop
+            all_UTMCoords = []
+            total_UTM = []
+
     
-        #Compile Test variables in txt file format that Hypack could read once converted to .lnw
-        lines = ["LNS 1\n", "LIN 2\n", f"PTS {easting_str} {northing_str}\n", f"PTS {easting2_str} {northing2_str}\n", "LNN 1\n", "EOL"]
+            #Loop through created line-points and store as UTM list
+            for x in ToUTMList:
+                LatTest = utm.from_latlon(x.latitude,x.longitude)
+     
+            #Grab just the easting/northing from the UTM
+                #Note - current output for LatTest1 gives UTM zone 17S... I am currently ignoring the "S" as it seems to work
+                UTMCoords = f"{LatTest[0]:.2f}, {LatTest[1]:.2f}"
+                #append values as this loop...loops
+                all_UTMCoords.append(UTMCoords)
+                #print(UTMCoords)
+
+                
+                
+        print("break here")
+        total_UTM.extend(all_UTMCoords)
+            #print(total_UTM)
+        singlelist = '\n'.join(total_UTM)
+        print(singlelist)
+        print(len(singlelist))
+            
+        #testing from here on on how to create line file
+        
+        #Variable to write number of lines at beginning of file
+        #lineslength = ["LNS " + endlength_str]
+        #Variable to write which line youre writing to in file
+        #numberoflines = list(range(1,endlength+1))
+        #Variable for how many points make up line(for this purpose, always 2)
+        #LIN2 = "LIN2"
+        
+        
+        #all_UTMCoords = f"{all_UTMCoords}"
+        #print(all_UTMCoords)
+        #pairs = all_UTMCoords[:2]
+        #print(pairs)
+        
+        
+        
+
+            
+           
+         #Compile Test variables in txt file format that Hypack could read once converted to .lnw
+         #lines = ["LNS 1\n", "LIN 2\n", f"PTS {easting_str} {northing_str}\n", f"PTS {easting2_str} {northing2_str}\n", "LNN 1\n", "EOL"]
+    
+
+
+
+            
+    
+
+
+    
+    #Compile Test variables in txt file format that Hypack could read once converted to .lnw
+    #lines = ["LNS 1\n", "LIN 2\n", f"PTS {easting_str} {northing_str}\n", f"PTS {easting2_str} {northing2_str}\n", "LNN 1\n", "EOL"]
         
         #Write file
-        with open("lineplanpractice", "w") as file:
-            file.writelines(lines)
-            file.close()
+        #with open("lineplanpractice", "w") as file:
+            #file.writelines(lines)
+            #file.close()
         
         
 
-        
-        else:
-            print("wa wa wa")
-        
+
 
 
